@@ -1,26 +1,48 @@
 package JavaLeetCodePractice;
 
+import java.lang.reflect.Array;
 import java.util.*;
 import java.math.*;
 
 
-public class Solution extends IOM {
-    public int thirdMax(int[] nums) {
-        Arrays.sort(nums);
-        int count = 0;
-        for (int i = nums.length - 1; i >= 0; i--) {
-            if (i == 0 || nums[i - 1] != nums[i]) {
-                count++;
-            }
-            if (count == 3) {
-                return nums[i];
-            }
-        }
-        return nums[nums.length - 1];
+class BinaryNode<T> {
+    BinaryNode<T> left;
+    BinaryNode<T> right;
+    T key;
+
+    BinaryNode(T key) {
+        this.key = key;
+    }
+}
+
+class MapNode<T, Q> {
+    MapNode<T, Q> left;
+    T key;
+    Q value;
+    MapNode<T, Q> right;
+
+    MapNode(T key, Q value) {
+        this.key = key;
+        this.value = value;
     }
 
-    public static void main(String[] args) {
+}
 
+
+public class Solution extends IOM {
+
+    public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder("hello world!\n");
+        System.out.println(sb);
+
+      sb.setCharAt(0,'A');
+        System.out.println(sb);
+
+        sb.insert(2,'n');
+        System.out.println(sb);
+
+        sb.delete(2,3);
+        System.out.println(sb);
     }
 }
 
